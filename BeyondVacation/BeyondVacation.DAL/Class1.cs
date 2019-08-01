@@ -10,7 +10,7 @@ namespace BeyondVacation.DAL
     {
         public void a()
         {
-
+            //
         }
     }
 }
