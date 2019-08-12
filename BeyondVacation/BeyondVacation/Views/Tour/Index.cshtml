@@ -1,0 +1,164 @@
+﻿
+@{
+    ViewBag.Title = "Tour";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+ .images{
+  display: flex;
+  flex-wrap:  wrap;
+  }
+.images .img,
+.images .pic {
+  flex-basis: 31%;
+  margin-bottom: 10px;
+  border-radius: 4px;
+}
+.images .img {
+  width: 112px;
+  height: 93px;
+  background-size: cover;
+  margin-right: 10px;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+.images .img:nth-child(3n) {
+  margin-right: 0;
+}
+.images .img span {
+  display: none;
+  text-transform: capitalize;
+  z-index: 2;
+}
+.images .img::after {
+  content: '';
+  width: 100%;
+  height: 100%;
+  transition: opacity .1s ease-in;
+  border-radius: 4px;
+  opacity: 0;
+  position: absolute;
+}
+.images .img:hover::after {
+  display: block;
+  background-color: #000;
+  opacity: .5;
+}
+.images .img:hover span {
+  display: block;
+  color: #fff;
+}
+.images .pic {
+  background-color: #aaaba8;
+    align-self: center;
+    text-align: center;
+    padding: 40px 0;
+    text-transform: uppercase;
+    color: #1b1c1d;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+@('@')media screen and (max-width: 400px) {
+  .images .img,
+  .images .pic {
+    flex-basis: 100%;
+    margin-right: 0;
+  }
+}
+
+@('@')keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+</style>
+<script src="~/Scripts/modernizr-2.8.3.js"></script>
+<script src="~/Scripts/Tour/Index.js"></script>
+<html>
+<body>
+    <div class="row">
+        <div class="col-xl-12 order-xl-1">
+            <div class="card bg-secondary shadow">
+                <div class="card-body">
+                        <h6 class="heading-small text-muted mb-4">Tour details</h6>
+                        <div class="pl-lg-4">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label class="form-control-label">Tour Name</label>
+                                        <input type="text" id="txtTourName" class="form-control" placeholder="Tour Name">
+                                        <label id="lblTourName" class="error" style="display:none"></label>
+                                     </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label class="form-control-label">Destination</label>
+                                        <input type="text" id="txtDestination" class="form-control" placeholder="Destination">
+                                        <label id="lblDestination" class="error" style="display:none"></label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label class="form-control-label">Country</label>
+                                        @Html.DropDownList("ddlCountryList", (IEnumerable<SelectListItem>)ViewBag.CountryList, new { id = "ddlCountry", @class = "form-control" })
+                                        <label id="lblCountryList" class="error" style="display:none"></label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-3">
+                                    <div class="form-group">
+                                        <label class="form-control-label">Days</label>
+                                        <input type="text" id="txtDays" class="form-control" placeholder="Days">
+                                        <label id="lblDays" class="error" style="display:none"></label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3">
+                                    <div class="form-group">
+                                        <label class="form-control-label">Nights</label>
+                                        <input type="text" id="txtNights" class="form-control" placeholder="Nights">
+                                        <label id="lblNights" class="error" style="display:none"></label>
+                                     </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label class="form-control-label">Upload Photos</label>
+                                        <div class="images">
+                                            <div class="pic">
+                                                add
+                                            </div>
+                                        </div>
+                                        </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-3">
+                                    <div class="form-group">
+                                        <label class="form-control-label">Cost</label>
+                                        <input type="text" id="txtCost" class="form-control" placeholder="Cost">
+                                        <label id="lblCost" class="error" style="display:none"></label>
+                                    </div>
+                                </div>
+                            </div>
+                                <div class="text-center">
+                                    <button type="button" class="btn btn-primary my-4" id="btnSaveDetails">Save</button>
+                                </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

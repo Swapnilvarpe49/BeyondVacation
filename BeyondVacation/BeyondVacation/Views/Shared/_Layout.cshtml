@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>
-        Argon Dashboard
+        @ViewBag.Title -Beyond Vacation
     </title>
     <!-- Favicon -->
     <link href="~/dashboard-assets/img/brand/favicon.png" rel="icon" type="image/png">
@@ -13,9 +13,15 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
     <!-- Icons -->
     <link href="~/dashboard-assets/js/plugins/nucleo/css/nucleo.css" rel="stylesheet" />
-    <link href="~/dashboard-assets/js/plugins/fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet" />
+    <link href="~/dashboard-assets/js/plugins/@("@")fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet" />
     <!-- CSS Files -->
     <link href="~/dashboard-assets/css/argon-dashboard.css?v=1.1.0" rel="stylesheet" />
+    <link href="~/Content/css/jquery-ui.css" rel="stylesheet" />
+    <!-- ig Files -->
+    <link href="~/Content/ig/infragistics.theme.css" rel="stylesheet" />
+    <link href="~/Content/ig/infragistics.css" rel="stylesheet" />
+
+    <script src="~/dashboard-assets/js/plugins/jquery/dist/jquery.min.js"></script>
 </head>
 <body>
     <!-- navbar -->
@@ -27,7 +33,7 @@
             </button>
             <!-- Brand -->
             <a class="navbar-brand pt-0" href="./index.html">
-                <img src="./assets/img/brand/blue.png" class="navbar-brand-img" alt="...">
+                <img src="~/dashboard-assets/img/brand/blue.png" class="navbar-brand-img" alt="...">
             </a>
             <!-- User -->
             <ul class="nav align-items-center d-md-none">
@@ -46,7 +52,7 @@
                     <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <div class="media align-items-center">
                             <span class="avatar avatar-sm rounded-circle">
-                                <img alt="Image placeholder" src="./assets/img/theme/team-1-800x800.jpg">
+                                <img alt="Image placeholder" src="~/dashboard-assets/img/theme/team-1-800x800.jpg">
                             </span>
                         </div>
                     </a>
@@ -85,7 +91,7 @@
                     <div class="row">
                         <div class="col-6 collapse-brand">
                             <a href="./index.html">
-                                <img src="./assets/img/brand/blue.png">
+                                <img src="~/dashboard-assets/img/brand/blue.png">
                             </a>
                         </div>
                         <div class="col-6 collapse-close">
@@ -110,7 +116,7 @@
                 <!-- Navigation -->
                 <ul class="navbar-nav">
                     <li class="nav-item active">
-                        <a class=" nav-link active " href=" ./index.html">
+                        <a class="nav-link active " href="./index.html">
                             <i class="ni ni-tv-2 text-primary"></i> Dashboard
                         </a>
                     </li>
@@ -146,7 +152,7 @@
                     </li>
                 </ul>
                 <!-- Divider -->
-                <hr class="my-3">
+                @*<hr class="my-3">
                 <!-- Heading -->
                 <h6 class="navbar-heading text-muted">Documentation</h6>
                 <!-- Navigation -->
@@ -166,7 +172,7 @@
                             <i class="ni ni-ui-04"></i> Components
                         </a>
                     </li>
-                </ul>
+                </ul>*@
             </div>
         </div>
     </nav>
@@ -178,10 +184,10 @@
             <div class="row align-items-center justify-content-xl-between">
                 <div class="col-xl-6">
                     <div class="copyright text-center text-xl-left text-muted">
-                        &copy; 2019 <a href="https://www.creative-tim.com" class="font-weight-bold ml-1" target="_blank">Creative Tim</a>
+                        &copy; 2019 <a href="https://www.creative-tim.com" class="font-weight-bold ml-1" target="_blank">Beyond Vacation</a>
                     </div>
                 </div>
-                <div class="col-xl-6">
+                @*<div class="col-xl-6">
                     <ul class="nav nav-footer justify-content-center justify-content-xl-end">
                         <li class="nav-item">
                             <a href="https://www.creative-tim.com" class="nav-link" target="_blank">Creative Tim</a>
@@ -196,22 +202,33 @@
                             <a href="https://github.com/creativetimofficial/argon-dashboard/blob/master/LICENSE.md" class="nav-link" target="_blank">MIT License</a>
                         </li>
                     </ul>
-                </div>
+                </div>*@
             </div>
         </footer>
         <!-- End of Footer -->
     </div>
 
     
+   
 
-    <script src="~/dashboard-assets/assets/js/plugins/jquery/dist/jquery.min.js"></script>
-    <script src="~/dashboard-assets/assets/js/plugins/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/Scripts/js/jquery-ui.js"></script>
+
+    <script src="~/dashboard-assets/js/plugins/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <!--   ig JS   -->
+    <script src="~/Scripts/ig/infragistics.core.js"></script>
+    <script src="~/Scripts/ig/infragistics.lob.js"></script>
     <!--   Optional JS   -->
-    <script src="~/dashboard-assets/assets/js/plugins/chart.js/dist/Chart.min.js"></script>
-    <script src="~/dashboard-assets/assets/js/plugins/chart.js/dist/Chart.extension.js"></script>
+    <script src="~/dashboard-assets/js/plugins/chart.js/dist/Chart.min.js"></script>
+    <script src="~/dashboard-assets/js/plugins/chart.js/dist/Chart.extension.js"></script>
     <!--   Argon JS   -->
-    <script src="~/dashboard-assets/assets/js/argon-dashboard.min.js?v=1.1.0"></script>
+    <script src="~/dashboard-assets/js/argon-dashboard.min.js?v=1.1.0"></script>
     <script src="https://cdn.trackjs.com/agent/v3/latest/t.js"></script>
+
+    <script src="~/Scripts/SweetAlert.js"></script>
+    <script src="~/Scripts/igCommon.js"></script>
+    <script src="~/Scripts/Enum.js"></script>
+    <script src="~/Scripts/Common.js"></script>
+    <script src="~/Scripts/JSLINQ.js"></script>
     <script>
         window.TrackJS &&
             TrackJS.install({
