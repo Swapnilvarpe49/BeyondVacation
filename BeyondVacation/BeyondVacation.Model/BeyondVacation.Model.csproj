@@ -66,6 +66,15 @@
       <DependentUpon>BeyondVacationData.edmx</DependentUpon>
     </Compile>
     <Compile Include="Class1.cs" />
+    <Compile Include="COUNTRY_MST_T.cs">
+      <DependentUpon>BeyondVacationData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LOOKUP_DET_T.cs">
+      <DependentUpon>BeyondVacationData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LOOKUP_MST_T.cs">
+      <DependentUpon>BeyondVacationData.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

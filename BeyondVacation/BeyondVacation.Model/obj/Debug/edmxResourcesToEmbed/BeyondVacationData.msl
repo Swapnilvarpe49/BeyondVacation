@@ -1,4 +1,39 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="BeyondVacationModelStoreContainer" CdmEntityContainer="BeyondVacationEntities" />
+  <EntityContainerMapping StorageEntityContainer="BeyondVacationModelStoreContainer" CdmEntityContainer="BeyondVacationEntities">
+    <EntitySetMapping Name="COUNTRY_MST_T">
+      <EntityTypeMapping TypeName="BeyondVacationModel.COUNTRY_MST_T">
+        <MappingFragment StoreEntitySet="COUNTRY_MST_T">
+          <ScalarProperty Name="ISDcode" ColumnName="ISDcode" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LOOKUP_DET_T">
+      <EntityTypeMapping TypeName="BeyondVacationModel.LOOKUP_DET_T">
+        <MappingFragment StoreEntitySet="LOOKUP_DET_T">
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="LookUpMasterId" ColumnName="LookUpMasterId" />
+          <ScalarProperty Name="LookUpValueGroupId" ColumnName="LookUpValueGroupId" />
+          <ScalarProperty Name="LookUpValueOrder" ColumnName="LookUpValueOrder" />
+          <ScalarProperty Name="LookUpValueCode" ColumnName="LookUpValueCode" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LOOKUP_MST_T">
+      <EntityTypeMapping TypeName="BeyondVacationModel.LOOKUP_MST_T">
+        <MappingFragment StoreEntitySet="LOOKUP_MST_T">
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
 </Mapping>

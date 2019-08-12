@@ -1,4 +1,39 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="BeyondVacationModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-  <EntityContainer Name="BeyondVacationEntities" annotation:LazyLoadingEnabled="true" />
+  <EntityContainer Name="BeyondVacationEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="COUNTRY_MST_T" EntityType="BeyondVacationModel.COUNTRY_MST_T" />
+    <EntitySet Name="LOOKUP_DET_T" EntityType="BeyondVacationModel.LOOKUP_DET_T" />
+    <EntitySet Name="LOOKUP_MST_T" EntityType="BeyondVacationModel.LOOKUP_MST_T" />
+  </EntityContainer>
+  <EntityType Name="COUNTRY_MST_T">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Active" Type="Boolean" />
+    <Property Name="ISDcode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="LOOKUP_DET_T">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="LookUpValueCode" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="LookUpValueOrder" Type="Int32" />
+    <Property Name="LookUpValueGroupId" Type="Int32" />
+    <Property Name="LookUpMasterId" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="Active" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="LOOKUP_MST_T">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="Active" Type="Boolean" />
+  </EntityType>
 </Schema>

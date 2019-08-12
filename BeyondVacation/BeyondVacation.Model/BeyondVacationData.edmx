@@ -4,20 +4,124 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="BeyondVacationModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityContainer Name="BeyondVacationModelStoreContainer" />
-      </Schema>
-    </edmx:StorageModels>
+    <Schema Namespace="BeyondVacationModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="COUNTRY_MST_T">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar(max)" />
+          <Property Name="Active" Type="bit" />
+          <Property Name="ISDcode" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="LOOKUP_DET_T">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar(max)" />
+          <Property Name="LookUpValueCode" Type="varchar" MaxLength="15" />
+          <Property Name="LookUpValueOrder" Type="int" />
+          <Property Name="LookUpValueGroupId" Type="int" />
+          <Property Name="LookUpMasterId" Type="int" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="Active" Type="bit" />
+        </EntityType>
+        <EntityType Name="LOOKUP_MST_T">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar(max)" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="Active" Type="bit" />
+        </EntityType>
+        <EntityContainer Name="BeyondVacationModelStoreContainer">
+          <EntitySet Name="COUNTRY_MST_T" EntityType="Self.COUNTRY_MST_T" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LOOKUP_DET_T" EntityType="Self.LOOKUP_DET_T" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LOOKUP_MST_T" EntityType="Self.LOOKUP_MST_T" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="BeyondVacationModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityContainer Name="BeyondVacationEntities" annotation:LazyLoadingEnabled="true" />
+        <EntityContainer Name="BeyondVacationEntities" annotation:LazyLoadingEnabled="true" >
+          <EntitySet Name="COUNTRY_MST_T" EntityType="BeyondVacationModel.COUNTRY_MST_T" />
+          <EntitySet Name="LOOKUP_DET_T" EntityType="BeyondVacationModel.LOOKUP_DET_T" />
+          <EntitySet Name="LOOKUP_MST_T" EntityType="BeyondVacationModel.LOOKUP_MST_T" />
+        </EntityContainer>
+        <EntityType Name="COUNTRY_MST_T">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Active" Type="Boolean" />
+          <Property Name="ISDcode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="LOOKUP_DET_T">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="LookUpValueCode" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="LookUpValueOrder" Type="Int32" />
+          <Property Name="LookUpValueGroupId" Type="Int32" />
+          <Property Name="LookUpMasterId" Type="Int32" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="Active" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="LOOKUP_MST_T">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="Active" Type="Boolean" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="BeyondVacationModelStoreContainer" CdmEntityContainer="BeyondVacationEntities" />
+        <EntityContainerMapping StorageEntityContainer="BeyondVacationModelStoreContainer" CdmEntityContainer="BeyondVacationEntities" >
+          <EntitySetMapping Name="COUNTRY_MST_T">
+            <EntityTypeMapping TypeName="BeyondVacationModel.COUNTRY_MST_T">
+              <MappingFragment StoreEntitySet="COUNTRY_MST_T">
+                <ScalarProperty Name="ISDcode" ColumnName="ISDcode" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LOOKUP_DET_T">
+            <EntityTypeMapping TypeName="BeyondVacationModel.LOOKUP_DET_T">
+              <MappingFragment StoreEntitySet="LOOKUP_DET_T">
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="LookUpMasterId" ColumnName="LookUpMasterId" />
+                <ScalarProperty Name="LookUpValueGroupId" ColumnName="LookUpValueGroupId" />
+                <ScalarProperty Name="LookUpValueOrder" ColumnName="LookUpValueOrder" />
+                <ScalarProperty Name="LookUpValueCode" ColumnName="LookUpValueCode" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LOOKUP_MST_T">
+            <EntityTypeMapping TypeName="BeyondVacationModel.LOOKUP_MST_T">
+              <MappingFragment StoreEntitySet="LOOKUP_MST_T">
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
   </edmx:Runtime>

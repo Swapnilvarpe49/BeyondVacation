@@ -4,7 +4,11 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="5dc0dad48b6d47c6bc36c5130c58e7ca" Name="Diagram1" />
+      <Diagram DiagramId="5dc0dad48b6d47c6bc36c5130c58e7ca" Name="Diagram1" >
+        <EntityTypeShape EntityType="BeyondVacationModel.COUNTRY_MST_T" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="BeyondVacationModel.LOOKUP_DET_T" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="BeyondVacationModel.LOOKUP_MST_T" Width="1.5" PointX="4.75" PointY="0.75" />
+      </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
 </edmx:Edmx>

@@ -1,4 +1,39 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="BeyondVacationModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-  <EntityContainer Name="BeyondVacationModelStoreContainer" />
+<Schema Namespace="BeyondVacationModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="COUNTRY_MST_T">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar(max)" />
+    <Property Name="Active" Type="bit" />
+    <Property Name="ISDcode" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="LOOKUP_DET_T">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar(max)" />
+    <Property Name="LookUpValueCode" Type="varchar" MaxLength="15" />
+    <Property Name="LookUpValueOrder" Type="int" />
+    <Property Name="LookUpValueGroupId" Type="int" />
+    <Property Name="LookUpMasterId" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="Active" Type="bit" />
+  </EntityType>
+  <EntityType Name="LOOKUP_MST_T">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar(max)" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="Active" Type="bit" />
+  </EntityType>
+  <EntityContainer Name="BeyondVacationModelStoreContainer">
+    <EntitySet Name="COUNTRY_MST_T" EntityType="Self.COUNTRY_MST_T" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LOOKUP_DET_T" EntityType="Self.LOOKUP_DET_T" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LOOKUP_MST_T" EntityType="Self.LOOKUP_MST_T" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
 </Schema>

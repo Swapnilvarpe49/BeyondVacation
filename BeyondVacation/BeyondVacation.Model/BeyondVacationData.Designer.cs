@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Jiten\Projects\BeyondVacation\BeyondVacation.Model\BeyondVacationData.edmx'. 
+﻿// T4 code generation is enabled for model 'F:\swapnil\FreeLance\BeyondVacation\trunk\BeyondVacation\BeyondVacation.Model\BeyondVacationData.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

@@ -21,3 +21,13 @@ C:\Users\pc\Downloads\BeyondVacation\BeyondVacation\BeyondVacation.Model\obj\Deb
 C:\Users\pc\Downloads\BeyondVacation\BeyondVacation\BeyondVacation.Model\obj\Debug\BeyondVacation.Model.csproj.CopyComplete
 C:\Users\pc\Downloads\BeyondVacation\BeyondVacation\BeyondVacation.Model\obj\Debug\BeyondVacation.Model.dll
 C:\Users\pc\Downloads\BeyondVacation\BeyondVacation\BeyondVacation.Model\obj\Debug\BeyondVacation.Model.pdb
+F:\swapnil\FreeLance\BeyondVacation\trunk\BeyondVacation\BeyondVacation.Model\bin\Debug\BeyondVacation.Model.dll.config
+F:\swapnil\FreeLance\BeyondVacation\trunk\BeyondVacation\BeyondVacation.Model\bin\Debug\BeyondVacation.Model.dll
+F:\swapnil\FreeLance\BeyondVacation\trunk\BeyondVacation\BeyondVacation.Model\bin\Debug\BeyondVacation.Model.pdb
+F:\swapnil\FreeLance\BeyondVacation\trunk\BeyondVacation\BeyondVacation.Model\bin\Debug\EntityFramework.dll
+F:\swapnil\FreeLance\BeyondVacation\trunk\BeyondVacation\BeyondVacation.Model\bin\Debug\EntityFramework.SqlServer.dll
+F:\swapnil\FreeLance\BeyondVacation\trunk\BeyondVacation\BeyondVacation.Model\bin\Debug\EntityFramework.xml
+F:\swapnil\FreeLance\BeyondVacation\trunk\BeyondVacation\BeyondVacation.Model\bin\Debug\EntityFramework.SqlServer.xml
+F:\swapnil\FreeLance\BeyondVacation\trunk\BeyondVacation\BeyondVacation.Model\obj\Debug\BeyondVacation.Model.dll
+F:\swapnil\FreeLance\BeyondVacation\trunk\BeyondVacation\BeyondVacation.Model\obj\Debug\BeyondVacation.Model.pdb
+F:\swapnil\FreeLance\BeyondVacation\trunk\BeyondVacation\BeyondVacation.Model\obj\Debug\BeyondVacation.Model.csprojResolveAssemblyReference.cache
