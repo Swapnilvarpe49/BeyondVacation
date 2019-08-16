@@ -366,7 +366,9 @@ p span { color:#6f6f6f; }
     -o-transition: all 0.6s ease-out;
     -ms-transition: all 0.6s ease-out;
     transition: all 0.3s ease-out;
-    background-color: #Fff!important;
+    background-color: #Fff !important;
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
 }
 
 .affix {
