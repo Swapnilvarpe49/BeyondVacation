@@ -6831,7 +6831,7 @@ button.bg-primary:focus {
 }
 
 .bg-secondary {
-  background-color: #f7fafc !important;
+  background-color: #fff !important;
 }
 
 a.bg-secondary:hover,
@@ -13414,7 +13414,7 @@ button.bg-cyan:focus {
 }
 
 .bg-white {
-  background-color: #fff !important;
+    background-color: #f7fafc !important;
 }
 
 a.bg-white:hover,
@@ -15975,9 +15975,9 @@ textarea[resize="horizontal"] {
 }
 
 .form-control-alternative {
-  box-shadow: 0 1px 3px rgba(50, 50, 93, 0.15), 0 1px 0 rgba(0, 0, 0, 0.02);
-  border: 0;
-  transition: box-shadow .15s ease;
+    box-shadow: 0 1px 3px rgba(50, 50, 93, 0.15), 0 1px 0 rgba(0, 0, 0, 0.02);
+    border: 1px solid #e2e2e2;
+    transition: box-shadow .15s ease;
 }
 
 .form-control-alternative:focus {
@@ -16869,7 +16869,7 @@ textarea[resize="horizontal"] {
 .navbar-vertical .navbar-brand-img,
 .navbar-vertical .navbar-brand>img {
   max-width: 100%;
-  max-height: 2rem;
+  /*max-height: 2rem;*/
 }
 
 @media (min-width: 768px) {
