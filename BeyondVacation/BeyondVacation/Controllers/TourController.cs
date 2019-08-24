@@ -30,9 +30,7 @@ namespace BeyondVacation.Controllers
         [HttpPost]
         public JsonResult SaveTourDetails(string TourData)
         {
-            string fileSavePath = "", message;
-            string fileName = "";
-            string tourCode = "";
+            string fileSavePath = "" , tourCode = "";
             try
             {
                 // Write Asyn method for Pkg Upload and Save Data
@@ -40,17 +38,18 @@ namespace BeyondVacation.Controllers
 
                 var serializer = new System.Web.Script.Serialization.JavaScriptSerializer();
                 TourDetails tourDetails = serializer.Deserialize<TourDetails>(TourData);
-                //message = _TourProcess.ValidatePackagExists(packageDetails);
                var tourDet = _TourProcess.SaveTourDetails(tourDetails, 1 /*userSessionId*/);
                 tourCode = tourDet.TourCode;
                 if (Request.Files.Count > 0)
                 {
+                    serverPath = serverPath + "/" + tourCode;
+                    if (!(Directory.Exists(serverPath)))
+                        Directory.CreateDirectory(Server.MapPath(serverPath));
+
+
                     for (int i = 0; i < Request.Files.Count; i++)
                     {
                         var file = Request.Files[i];
-                        //fileName = Path.GetExtension(file.FileName);
-                        //    string uploadFileNameExt = Path.GetExtension(file.FileName);
-                        //    fileName = fileName.Split('.')[0] + uploadFileNameExt;
                             fileSavePath = Path.Combine(Server.MapPath(serverPath), file.FileName);
                         file.SaveAs(fileSavePath);
                         _TourProcess.SaveTourImgDetails(tourDet.TourId, file.FileName);

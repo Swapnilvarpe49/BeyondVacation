@@ -27,13 +27,17 @@ function uploadImage() {
         debugger
         var reader = new FileReader()
         reader.onload = function (event) {
-            images.prepend('<div class="img" style="background-image: url(\'' + event.target.result + '\');" rel="' + event.target.result + '"><span>remove</span></div>')
+            images.prepend('<div class="img" file-name=\'' + uploader[0].files[0].name + '\' style="background-image: url(\'' + event.target.result + '\');" rel="' + event.target.result + '"><span>remove</span></div>')
         }
         reader.readAsDataURL(uploader[0].files[0])
         Images.push(uploader[0].files[0]);
     })
 
     images.on('click', '.img', function () {
+        var fileName = $(this).attr('file-name');
+        Images = Images.filter(function (obj) {
+            return obj.name !== fileName;
+        });
         $(this).remove();
     })
 
